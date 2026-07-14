@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import ChangeLight from './component/ChangeLight/ChangeLight';
 
 function App() {
+
+  const [light, setLight] = useState(false)
+  const [question, setQuestion] = useState(null)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={light === false ? "wrapperDark" : "wrapperLight"}>
+      <div className='contentWrapper'>
+        <ChangeLight
+          light = {light}
+          setLight = {setLight}
+        />
+        <div className='conctentBlock'>
+          
+        </div>
+      </div>
     </div>
   );
 }
