@@ -5,6 +5,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  position: relative;
 }
 
 .wrapperLight{
@@ -14,15 +16,59 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  position: relative;
 }
 
 .contentWrapper{
   width: 95%;
   min-height: 800px;
-  border: 1px solid red;
+  border: 1px solid yellow;
+  z-index: 1;
 }
 
 .conctentBlock{
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+.circleBlock-leftDark{
+  position: absolute;
+  left: -500px;
+  top: -450px;
+  width: 800px;
+  height: 800px;
+  border: 150px solid #2d3949;
+  border-radius: 50%;
+}
+
+.circleBlock-rightDark{
+  position: absolute;
+  right: -500px;
+  bottom: -450px;
+  width: 800px;
+  height: 800px;
+  border: 150px solid #2d3949;
+  border-radius: 50%;
+}
+
+.circleBlock-leftLight{
+  position: absolute;
+  left: -500px;
+  top: -450px;
+  width: 800px;
+  height: 800px;
+  border: 150px solid #ac905e27;
+  border-radius: 50%;
+}
+
+.circleBlock-rightLight{
+  position: absolute;
+  right: -500px;
+  bottom: -450px;
+  width: 800px;
+  height: 800px;
+  border: 150px solid #ac905e27;
+  border-radius: 50%;
+}
+

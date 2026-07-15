@@ -1,6 +1,8 @@
 import './App.css';
 import { useState } from 'react';
 import ChangeLight from './component/ChangeLight/ChangeLight';
+import QuestionBlock from './component/QuestionBlock/QuestionBlock';
+import AnswerBlock from './component/AnswerBlock/AnswerBlock'
 
 function App() {
 
@@ -9,13 +11,16 @@ function App() {
 
   return (
     <div className={light === false ? "wrapperDark" : "wrapperLight"}>
+      <div className={light === false ? 'circleBlock-leftDark' : 'circleBlock-leftLight'}></div>
+      <div className={light === false ? 'circleBlock-rightDark' : 'circleBlock-rightLight'}></div>
       <div className='contentWrapper'>
         <ChangeLight
           light = {light}
           setLight = {setLight}
         />
         <div className='conctentBlock'>
-          
+          <QuestionBlock/>
+          <AnswerBlock/>
         </div>
       </div>
     </div>
