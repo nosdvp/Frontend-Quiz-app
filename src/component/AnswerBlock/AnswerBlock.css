@@ -1,8 +1,7 @@
 .wrapper {
-  width: 100%;
+  min-width: 100%;
   min-height: 500px;
   height: auto;
-  border: 1px solid red;
   box-sizing: border-box;
   padding: 20px;
 }
@@ -59,4 +58,10 @@
 img {
   width: 30px;
   height: 30px;
+}
+
+@media (max-width: 425px) {
+  .button {
+    font-size: 20px;
+  }
 }/*# sourceMappingURL=AnswerBlock.css.map */

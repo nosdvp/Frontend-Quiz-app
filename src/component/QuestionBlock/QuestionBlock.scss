@@ -1,0 +1,111 @@
+.wrapperQB{
+    width: 100%;
+    min-height: 300px;
+    height: auto;
+    box-sizing: border-box;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    //border: 1px solid red;
+}
+
+.helloBlock{
+    width: 665px;
+    min-height: 300px;
+    //border: 1px solid green;
+    &__firstLineTitleDark{
+        font-size: 90px;
+        color: white;
+    }
+    &__secondLineTitleDark,
+    &__secondLineTitleLight{
+        font-size: 90px;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 50px;
+    }
+    &__thirdLineTitleDark,
+    &__thirdLineTitleLight{
+        color: white;
+        font-size: 30px;
+        font-style: italic;
+        text-decoration: underline;
+        text-underline-offset: 10px;
+    }
+    &__firstLineTitleLight{
+        font-size: 90px;
+        color: #3c4d67;
+    }
+    &__secondLineTitleLight{
+        color: #3c4d67;
+    }
+    &__thirdLineTitleLight{
+        color: #3c4d67;
+    }
+}
+
+@media(max-width:1440px){
+    .helloBlock{
+        width: 440px;
+        &__firstLineTitleDark,
+        &__firstLineTitleLight,
+        &__secondLineTitleDark,
+        &__secondLineTitleLight{
+            font-size: 60px;
+        }
+        &__thirdLineTitleDark,
+        &__thirdLineTitleLight{
+            font-size: 25px;
+        }
+    }
+}
+
+@media(max-width:1024px){
+    .helloBlock{
+        width: 95%;
+        &__firstLineTitleDark,
+        &__firstLineTitleLight,
+        &__secondLineTitleDark,
+        &__secondLineTitleLight{
+            font-size: 70px;
+        }
+        &__thirdLineTitleDark,
+        &__thirdLineTitleLight{
+            font-size: 30px;
+        }
+    }
+}
+
+@media(max-width:555px){
+    .helloBlock{
+        &__firstLineTitleDark,
+        &__firstLineTitleLight,
+        &__secondLineTitleDark,
+        &__secondLineTitleLight{
+            font-size: 50px;
+        }
+        &__thirdLineTitleDark,
+        &__thirdLineTitleLight{
+            font-size: 30px;
+        }
+    }
+}
+
+@media(max-width:425px){
+    .wrapperQB{
+        min-height: 200px;
+    }
+    .helloBlock{
+        min-height: 200px;
+        &__firstLineTitleDark,
+        &__firstLineTitleLight,
+        &__secondLineTitleDark,
+        &__secondLineTitleLight{
+            font-size: 40px;
+        }
+        &__thirdLineTitleDark,
+        &__thirdLineTitleLight{
+            font-size: 20px;
+        }
+    }
+}

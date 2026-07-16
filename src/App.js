@@ -19,7 +19,9 @@ function App() {
           setLight = {setLight}
         />
         <div className='conctentBlock'>
-          <QuestionBlock/>
+          <QuestionBlock
+            light = {light}
+          />
           <AnswerBlock/>
         </div>
       </div>

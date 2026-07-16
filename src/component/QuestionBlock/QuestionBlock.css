@@ -1,1 +1,86 @@
-/*# sourceMappingURL=QuestionBlock.css.map */
+.wrapperQB {
+  width: 100%;
+  min-height: 300px;
+  height: auto;
+  box-sizing: border-box;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.helloBlock {
+  width: 665px;
+  min-height: 300px;
+}
+.helloBlock__firstLineTitleDark {
+  font-size: 90px;
+  color: white;
+}
+.helloBlock__secondLineTitleDark, .helloBlock__secondLineTitleLight {
+  font-size: 90px;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+.helloBlock__thirdLineTitleDark, .helloBlock__thirdLineTitleLight {
+  color: white;
+  font-size: 30px;
+  font-style: italic;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
+.helloBlock__firstLineTitleLight {
+  font-size: 90px;
+  color: #3c4d67;
+}
+.helloBlock__secondLineTitleLight {
+  color: #3c4d67;
+}
+.helloBlock__thirdLineTitleLight {
+  color: #3c4d67;
+}
+
+@media (max-width: 1440px) {
+  .helloBlock {
+    width: 440px;
+  }
+  .helloBlock__firstLineTitleDark, .helloBlock__firstLineTitleLight, .helloBlock__secondLineTitleDark, .helloBlock__secondLineTitleLight {
+    font-size: 60px;
+  }
+  .helloBlock__thirdLineTitleDark, .helloBlock__thirdLineTitleLight {
+    font-size: 25px;
+  }
+}
+@media (max-width: 1024px) {
+  .helloBlock {
+    width: 95%;
+  }
+  .helloBlock__firstLineTitleDark, .helloBlock__firstLineTitleLight, .helloBlock__secondLineTitleDark, .helloBlock__secondLineTitleLight {
+    font-size: 70px;
+  }
+  .helloBlock__thirdLineTitleDark, .helloBlock__thirdLineTitleLight {
+    font-size: 30px;
+  }
+}
+@media (max-width: 555px) {
+  .helloBlock__firstLineTitleDark, .helloBlock__firstLineTitleLight, .helloBlock__secondLineTitleDark, .helloBlock__secondLineTitleLight {
+    font-size: 50px;
+  }
+  .helloBlock__thirdLineTitleDark, .helloBlock__thirdLineTitleLight {
+    font-size: 30px;
+  }
+}
+@media (max-width: 425px) {
+  .wrapperQB {
+    min-height: 200px;
+  }
+  .helloBlock {
+    min-height: 200px;
+  }
+  .helloBlock__firstLineTitleDark, .helloBlock__firstLineTitleLight, .helloBlock__secondLineTitleDark, .helloBlock__secondLineTitleLight {
+    font-size: 40px;
+  }
+  .helloBlock__thirdLineTitleDark, .helloBlock__thirdLineTitleLight {
+    font-size: 20px;
+  }
+}/*# sourceMappingURL=QuestionBlock.css.map */

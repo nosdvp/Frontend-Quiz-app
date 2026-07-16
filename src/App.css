@@ -1,6 +1,6 @@
 .wrapperDark{
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #313e51;
   display: flex;
   align-items: center;
@@ -11,7 +11,7 @@
 
 .wrapperLight{
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #fceed4b0;
   display: flex;
   align-items: center;
@@ -23,13 +23,18 @@
 .contentWrapper{
   width: 95%;
   min-height: 800px;
-  border: 1px solid yellow;
+  /*border: 1px solid yellow;*/
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .conctentBlock{
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 30px;
 }
 
 .circleBlock-leftDark{
@@ -72,3 +77,12 @@
   border-radius: 50%;
 }
 
+@media(max-width:1024px){
+  .conctentBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+}
