@@ -1,5 +1,5 @@
 .wrapper{
-    min-width: 100%;
+    width: 100%;
     min-height: 500px;
     height: auto;
     //border: 1px solid red;
@@ -15,7 +15,7 @@
     border-radius: 20px;
     margin: 20px 0;
     cursor: pointer;
-    background-color: #3c4d67;
+    background-color: #3c4d67d8;
     color: white;
     font-weight: bold;
     font-size: 30px;
@@ -23,6 +23,9 @@
     &:hover{
         transform: scale(1.01);
         transition: 0.1s;
+        box-shadow: 
+        3px 3px 20px 10px #aa27f6b2,
+        -3px -3px 10px 10px rgba(255, 255, 0, 0.623);
     }
     &:active{
         transform: scale(0.95);

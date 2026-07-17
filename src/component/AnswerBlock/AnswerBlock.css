@@ -1,7 +1,8 @@
 .wrapper {
-  min-width: 100%;
+  width: 100%;
   min-height: 500px;
   height: auto;
+  border: 1px solid red;
   box-sizing: border-box;
   padding: 20px;
 }
@@ -14,7 +15,7 @@
   border-radius: 20px;
   margin: 20px 0;
   cursor: pointer;
-  background-color: #3c4d67;
+  background-color: rgba(60, 77, 103, 0.8470588235);
   color: white;
   font-weight: bold;
   font-size: 30px;
@@ -23,6 +24,7 @@
 .button:hover {
   transform: scale(1.01);
   transition: 0.1s;
+  box-shadow: 3px 3px 20px 10px rgba(170, 39, 246, 0.6980392157), -3px -3px 10px 10px rgba(255, 255, 0, 0.623);
 }
 .button:active {
   transform: scale(0.95);

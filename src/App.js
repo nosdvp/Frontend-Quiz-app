@@ -8,6 +8,8 @@ function App() {
 
   const [light, setLight] = useState(false)
   const [question, setQuestion] = useState(null)
+  const [article, setArticle] = useState('')
+  const [currentQuestion, setCurrentQuestion] = useState(0)
 
   return (
     <div className={light === false ? "wrapperDark" : "wrapperLight"}>
@@ -21,8 +23,16 @@ function App() {
         <div className='conctentBlock'>
           <QuestionBlock
             light = {light}
+            article = {article}
+            currentQuestion = {currentQuestion}
+            
           />
-          <AnswerBlock/>
+          <AnswerBlock
+            article = {article}
+            setArticle = {setArticle}
+          
+            setCurrentQuestion = {setCurrentQuestion}
+          />
         </div>
       </div>
     </div>
