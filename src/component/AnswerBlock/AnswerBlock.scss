@@ -71,8 +71,44 @@ img{
     height: 30px;
 }
 
+.buttonAnswerBlock{
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    button{
+        border: none;
+        outline: none;
+        min-height: 90px;
+        background-color: #3c4d67d8;
+        border-radius: 20px;
+        margin: 20px 0;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        padding: 20px;
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.01);
+            transition: 0.1s;
+            box-shadow: 
+            3px 3px 20px 10px #f627d4b2,
+            -3px -3px 10px 10px rgba(255, 136, 0, 0.623);
+        }
+        &:active{
+            transform: scale(0.95);
+            transition: 0.1s;
+        }
+    }
+}
+
 @media(max-width:425px){
     .button{
         font-size: 20px;
+    }
+    .buttonAnswerBlock{
+        button{
+            font-size: 20px;
+        }
     }
 }

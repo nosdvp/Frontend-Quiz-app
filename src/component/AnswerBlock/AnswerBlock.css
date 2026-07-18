@@ -2,7 +2,6 @@
   width: 100%;
   min-height: 500px;
   height: auto;
-  border: 1px solid red;
   box-sizing: border-box;
   padding: 20px;
 }
@@ -62,8 +61,40 @@ img {
   height: 30px;
 }
 
+.buttonAnswerBlock {
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.buttonAnswerBlock button {
+  border: none;
+  outline: none;
+  min-height: 90px;
+  background-color: rgba(60, 77, 103, 0.8470588235);
+  border-radius: 20px;
+  margin: 20px 0;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 20px;
+  cursor: pointer;
+}
+.buttonAnswerBlock button:hover {
+  transform: scale(1.01);
+  transition: 0.1s;
+  box-shadow: 3px 3px 20px 10px rgba(246, 39, 212, 0.6980392157), -3px -3px 10px 10px rgba(255, 136, 0, 0.623);
+}
+.buttonAnswerBlock button:active {
+  transform: scale(0.95);
+  transition: 0.1s;
+}
+
 @media (max-width: 425px) {
   .button {
+    font-size: 20px;
+  }
+  .buttonAnswerBlock button {
     font-size: 20px;
   }
 }/*# sourceMappingURL=AnswerBlock.css.map */

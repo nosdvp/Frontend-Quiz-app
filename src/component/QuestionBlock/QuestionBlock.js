@@ -6,6 +6,7 @@ const QuestionBlock = ({
   light, 
   article, 
   currentQuestion,
+  count
 }) => {
 
   return (
@@ -18,19 +19,31 @@ const QuestionBlock = ({
         </div>
       ) : article === 'HTML' ? (
         <>
-          <div>{quizData.HTML[currentQuestion].question}</div>
+          <div className='wrapperQB__HTMLblock'>
+            <div className='wrapperQB__HTMLblock_counter'>Question {count} of {quizData.HTML.length}</div>
+            <div className='wrapperQB__HTMLblock_question'>{quizData.HTML[currentQuestion].question}</div>
+          </div>
         </>
       ) : article === 'CSS' ? (
         <>
-          <div>{quizData.CSS[currentQuestion].question}</div>
+          <div className='wrapperQB__CSSblock'>
+            <div className='wrapperQB__CSSblock_counter'>Question {count} of {quizData.CSS.length}</div>
+            <div className='wrapperQB__CSSblock_question'>{quizData.CSS[currentQuestion].question}</div>
+          </div>
         </>
       ) : article === 'JS' ? (
         <>
-          <div>{quizData.JavaScript[currentQuestion].question}</div>
+          <div className='wrapperQB__JSblock'>
+            <div className='wrapperQB__JSblock_counter'>Question {count} of {quizData.JavaScript.length}</div>
+            <div className='wrapperQB__JSblock_question'>{quizData.JavaScript[currentQuestion].question}</div>
+          </div>
         </>
       ) : (
         <>
-          <div>{quizData.Accessibility[currentQuestion].question}</div>
+          <div className='wrapperQB__AccessibilityBlock'>
+            <div className='wrapperQB__AccessibilityBlock_counter'>Question {count} of {quizData.Accessibility.length}</div>
+            <div className='wrapperQB__AccessibilityBlock_question'>{quizData.Accessibility[currentQuestion].question}</div>
+          </div>
         </>
       )}
     </div>

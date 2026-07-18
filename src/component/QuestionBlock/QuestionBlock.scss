@@ -1,12 +1,30 @@
 .wrapperQB{
     width: 100%;
-    min-height: 300px;
+    min-height: 150px;
     height: auto;
     box-sizing: border-box;
     padding: 20px 0;
     display: flex;
     justify-content: center;
     //border: 1px solid red;
+    &__HTMLblock,
+    &__CSSblock,
+    &__JSblock,
+    &__AccessibilityBlock{
+        width: 400px;
+        min-height: 150px;
+        &_counter{
+            color: #ffffff98;
+            font-size: 25px;
+            font-style: italic;
+            margin-bottom: 50px;
+        }
+        &_question{
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+        }
+    }
 }
 
 .helloBlock{
@@ -61,6 +79,23 @@
 }
 
 @media(max-width:1024px){
+    .wrapperQB{
+        &__HTMLblock{
+            width: 95%;
+                &_counter{
+                    color: #ffffff98;
+                    font-size: 25px;
+                    font-style: italic;
+                    margin-bottom: 50px;
+                }
+                &_question{
+                    color: white;
+                    font-size: 30px;
+                    font-weight: bold;
+                }
+            }
+    }
+    
     .helloBlock{
         width: 95%;
         &__firstLineTitleDark,
