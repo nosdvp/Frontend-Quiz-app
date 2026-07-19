@@ -58,7 +58,7 @@ const AnswerBlock = ({
       setCountSuccessAnswer(prev => prev + 0)
     }
     }
-    
+
   }
 
   console.log(countSuccessAnswer)

@@ -19,6 +19,8 @@ function App() {
       <div className='contentWrapper'>
         <ChangeLight
           light = {light}
+          article = {article}
+          
           setLight = {setLight}
         />
         <div className='conctentBlock'>
