@@ -10,6 +10,7 @@ const AnswerBlock = ({
   article, 
   setArticle,
   count,
+  currentQuestion,
 
   setCurrentQuestion,
   setCount,
@@ -27,6 +28,7 @@ const AnswerBlock = ({
     setCount(count + 1)
     setCurrentAnswer(prev => prev + 1)
     setCurrentQuestion(prev => prev + 1)
+
     if(article === 'HTML'){
       if(item === quizData.HTML[currentAnswer].answers[quizData.HTML[currentAnswer].correctAnswer]){
       setCountSuccessAnswer(prev => prev + 1)
@@ -58,10 +60,45 @@ const AnswerBlock = ({
       setCountSuccessAnswer(prev => prev + 0)
     }
     }
-
   }
 
-  console.log(countSuccessAnswer)
+  const result = (item) => {
+    setArticle('result')
+    setCurrentQuestion(0)
+    setCount(count + 1)
+    if(article === 'HTML'){
+      if(item === quizData.HTML[currentAnswer].answers[quizData.HTML[currentAnswer].correctAnswer]){
+      setCountSuccessAnswer(prev => prev + 1)
+    }else{
+      setCountSuccessAnswer(prev => prev + 0)
+    }
+    }
+    if(article === 'CSS'){
+      if(item === quizData.CSS[currentAnswer].answers[quizData.CSS[currentAnswer].correctAnswer]){
+      setCountSuccessAnswer(prev => prev + 1)
+    }else{
+      setCountSuccessAnswer(prev => prev + 0)
+    }
+    }
+
+    if(article === 'JS'){
+      if(item === quizData.JavaScript[currentAnswer].answers[quizData.JavaScript[currentAnswer].correctAnswer]){
+      setCountSuccessAnswer(prev => prev + 1)
+    }else{
+      setCountSuccessAnswer(prev => prev + 0)
+    }
+    }
+
+    if(article === 'body'){
+      if(item === quizData.Accessibility[currentAnswer].answers[quizData.Accessibility[currentAnswer].correctAnswer]){
+      setCountSuccessAnswer(prev => prev + 1)
+    }else{
+      setCountSuccessAnswer(prev => prev + 0)
+    }
+    }
+  }
+
+  console.log(article)
 
   return (
     <div className='wrapper'>
@@ -104,25 +141,52 @@ const AnswerBlock = ({
           </button>
         </>
       ) : article === 'HTML' ? (
-          <div className='buttonAnswerBlock'>{(quizData.HTML[currentAnswer].answers).map((item => (
-            <button onClick={() => nextQuestion(item)}>{[item]}</button>
-          )))}</div>
-          
+            currentQuestion !== 9 ? (
+              <div className='buttonAnswerBlock'>{(quizData.HTML[currentAnswer].answers).map((item => (
+              <button onClick={() => nextQuestion(item)}>{item}</button>
+            )))}</div>
+          ) : (
+            <div className='buttonAnswerBlock'>{(quizData.HTML[currentAnswer].answers).map((item => (
+              <button onClick={() => result(item)}>{item}</button>
+            )))}</div>
+          )
+
       ) : article === 'CSS' ? (
-          <div className='buttonAnswerBlock'>{(quizData.CSS[currentAnswer].answers).map((item => (
-            <button onClick={() => nextQuestion(item)}>{[item]}</button>
-          )))}</div>
+          currentQuestion !== 9 ? (
+            <div className='buttonAnswerBlock'>{(quizData.CSS[currentAnswer].answers).map((item => (
+              <button onClick={() => nextQuestion(item)}>{item}</button>
+            )))}</div>
+            ) : (
+              <div className='buttonAnswerBlock'>{(quizData.CSS[currentAnswer].answers).map(item => (
+                <button onClick={() => result(item)}>{item}</button>
+              ))}</div>
+            )
 
       ) : article === 'JS' ? (
-          <div className='buttonAnswerBlock'>{(quizData.JavaScript[currentAnswer].answers).map((item => (
-            <button onClick={() => nextQuestion(item)}>{[item]}</button>
-          )))}</div>
-      ) : (
-          <div className='buttonAnswerBlock'>{(quizData.Accessibility[currentAnswer].answers).map((item => (
-            <button onClick={() => nextQuestion(item)}>{[item]}</button>
-          )))}</div>
-      )}
-      
+          currentQuestion !== 9 ? (
+            <div className='buttonAnswerBlock'>{(quizData.JavaScript[currentAnswer].answers).map((item => (
+              <button onClick={() => nextQuestion(item)}>{item}</button>
+            )))}</div>
+            ) : (
+              <div className='buttonAnswerBlock'>{(quizData.JavaScript[currentAnswer].answers).map((item) => (
+                <button onClick={() => result(item)}>{item}</button>
+              ))}</div>
+            )
+          
+      ) : article === 'body' ? (
+          currentQuestion !== 9 ? (
+            <div className='buttonAnswerBlock'>{(quizData.Accessibility[currentAnswer].answers).map((item => (
+              <button onClick={() => nextQuestion(item)}>{item}</button>
+            )))}</div>
+          ) : (
+            <div className='buttonAnswerBlock'>{(quizData.Accessibility[currentAnswer].answers).map((item) => (
+              <button onClick={() => result(item)}>{item}</button>
+            ))}</div>
+          )
+          
+      ) : article === 'result' ? (
+          <div>result: {countSuccessAnswer}</div>
+      ) : null}
     </div>
   )
 }

@@ -9,6 +9,8 @@ const QuestionBlock = ({
   count
 }) => {
 
+  console.log(count)
+
   return (
     <div className='wrapperQB'>
       {article === '' ? (
@@ -18,12 +20,10 @@ const QuestionBlock = ({
           <div className={light ? 'helloBlock__thirdLineTitleLight' : 'helloBlock__thirdLineTitleDark'}>Pich a subject to get started</div>
         </div>
       ) : article === 'HTML' ? (
-        <>
-          <div className='wrapperQB__HTMLblock'>
+            <div className='wrapperQB__HTMLblock'>
             <div className='wrapperQB__HTMLblock_counter'>Question {count} of {quizData.HTML.length}</div>
             <div className='wrapperQB__HTMLblock_question'>{quizData.HTML[currentQuestion].question}</div>
           </div>
-        </>
       ) : article === 'CSS' ? (
         <>
           <div className='wrapperQB__CSSblock'>
@@ -38,14 +38,16 @@ const QuestionBlock = ({
             <div className='wrapperQB__JSblock_question'>{quizData.JavaScript[currentQuestion].question}</div>
           </div>
         </>
-      ) : (
+      ) : article === 'body' ?(
         <>
           <div className='wrapperQB__AccessibilityBlock'>
             <div className='wrapperQB__AccessibilityBlock_counter'>Question {count} of {quizData.Accessibility.length}</div>
             <div className='wrapperQB__AccessibilityBlock_question'>{quizData.Accessibility[currentQuestion].question}</div>
           </div>
         </>
-      )}
+      ) : article === 'result' ? (
+          <div>test</div>
+      ) : null}
     </div>
   )
 }

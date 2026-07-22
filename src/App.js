@@ -34,6 +34,7 @@ function App() {
           <AnswerBlock
             article = {article}
             count = {count}
+            currentQuestion = {currentQuestion}
 
             setArticle = {setArticle}
             setCurrentQuestion = {setCurrentQuestion}
