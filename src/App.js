@@ -11,6 +11,8 @@ function App() {
   const [article, setArticle] = useState('')
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [count, setCount] = useState(1)
+  const [countSuccessAnswer, setCountSuccessAnswer] = useState(0)
+  const [resultArticle, setResultArticle] = useState('')
 
   return (
     <div className={light === false ? "wrapperDark" : "wrapperLight"}>
@@ -29,16 +31,22 @@ function App() {
             article = {article}
             currentQuestion = {currentQuestion}
             count = {count}
-            
+            countSuccessAnswer = {countSuccessAnswer}
+            resultArticle = {resultArticle}
+
+            setArticle = {setArticle}
           />
           <AnswerBlock
             article = {article}
             count = {count}
             currentQuestion = {currentQuestion}
+            countSuccessAnswer = {countSuccessAnswer}
 
             setArticle = {setArticle}
             setCurrentQuestion = {setCurrentQuestion}
             setCount = {setCount}
+            setCountSuccessAnswer = {setCountSuccessAnswer}
+            setResultArticle = {setResultArticle}
           />
         </div>
       </div>

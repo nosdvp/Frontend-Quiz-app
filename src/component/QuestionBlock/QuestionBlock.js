@@ -6,48 +6,105 @@ const QuestionBlock = ({
   light, 
   article, 
   currentQuestion,
-  count
+  count,
+  countSuccessAnswer,
+  resultArticle,
+
+  setArticle
 }) => {
 
-  console.log(count)
+  const backToMainPage = () => {
+    setArticle('')
+  }
 
   return (
     <div className='wrapperQB'>
+
       {article === '' ? (
-        <div className='helloBlock'>
-          <div className={light ? 'helloBlock__firstLineTitleLight' : 'helloBlock__firstLineTitleDark'}>Welcome to the</div>
-          <div className={light ? 'helloBlock__secondLineTitleLight' : 'helloBlock__secondLineTitleDark'}>Frontend Quiz!</div>
-          <div className={light ? 'helloBlock__thirdLineTitleLight' : 'helloBlock__thirdLineTitleDark'}>Pich a subject to get started</div>
-        </div>
-      ) : article === 'HTML' ? (
-            <div className='wrapperQB__HTMLblock'>
-            <div className='wrapperQB__HTMLblock_counter'>Question {count} of {quizData.HTML.length}</div>
-            <div className='wrapperQB__HTMLblock_question'>{quizData.HTML[currentQuestion].question}</div>
+          <div className='helloBlock'>
+            <div className={light ? 'helloBlock__firstLineTitleLight' : 'helloBlock__firstLineTitleDark'}>Welcome to the</div>
+            <div className={light ? 'helloBlock__secondLineTitleLight' : 'helloBlock__secondLineTitleDark'}>Frontend Quiz!</div>
+            <div className={light ? 'helloBlock__thirdLineTitleLight' : 'helloBlock__thirdLineTitleDark'}>Pich a subject to get started</div>
           </div>
-      ) : article === 'CSS' ? (
-        <>
-          <div className='wrapperQB__CSSblock'>
-            <div className='wrapperQB__CSSblock_counter'>Question {count} of {quizData.CSS.length}</div>
-            <div className='wrapperQB__CSSblock_question'>{quizData.CSS[currentQuestion].question}</div>
-          </div>
-        </>
-      ) : article === 'JS' ? (
-        <>
-          <div className='wrapperQB__JSblock'>
-            <div className='wrapperQB__JSblock_counter'>Question {count} of {quizData.JavaScript.length}</div>
-            <div className='wrapperQB__JSblock_question'>{quizData.JavaScript[currentQuestion].question}</div>
-          </div>
-        </>
-      ) : article === 'body' ?(
-        <>
-          <div className='wrapperQB__AccessibilityBlock'>
-            <div className='wrapperQB__AccessibilityBlock_counter'>Question {count} of {quizData.Accessibility.length}</div>
-            <div className='wrapperQB__AccessibilityBlock_question'>{quizData.Accessibility[currentQuestion].question}</div>
-          </div>
-        </>
+
+        ) : article === 'HTML' ? (
+              <div className='wrapperQB__HTMLblock'>
+              <div className='wrapperQB__HTMLblock_counter'>Question {count} of {quizData.HTML.length}</div>
+              <div className='wrapperQB__HTMLblock_question'>{quizData.HTML[currentQuestion].question}</div>
+            </div>
+
+        ) : article === 'CSS' ? (
+            <div className='wrapperQB__CSSblock'>
+              <div className='wrapperQB__CSSblock_counter'>Question {count} of {quizData.CSS.length}</div>
+              <div className='wrapperQB__CSSblock_question'>{quizData.CSS[currentQuestion].question}</div>
+            </div>
+
+        ) : article === 'JS' ? (
+            <div className='wrapperQB__JSblock'>
+              <div className='wrapperQB__JSblock_counter'>Question {count} of {quizData.JavaScript.length}</div>
+              <div className='wrapperQB__JSblock_question'>{quizData.JavaScript[currentQuestion].question}</div>
+            </div>
+
+        ) : article === 'body' ?(
+            <div className='wrapperQB__AccessibilityBlock'>
+              <div className='wrapperQB__AccessibilityBlock_counter'>Question {count} of {quizData.Accessibility.length}</div>
+              <div className='wrapperQB__AccessibilityBlock_question'>{quizData.Accessibility[currentQuestion].question}</div>
+            </div>
+            
       ) : article === 'result' ? (
-          <div>test</div>
+
+            resultArticle === 'HTML' ? (
+            <div className='wrapperQB__result'>
+              <div>Congratulations, you've completed the test.</div>
+              {countSuccessAnswer <= 4 ? (
+                <div className='minFor'>Your result : {countSuccessAnswer} / {quizData.HTML.length}</div>
+              ) : countSuccessAnswer <=8 ? (
+                <div className='avarage'>Your result : {countSuccessAnswer} / {quizData.HTML.length}</div>
+              ) : countSuccessAnswer > 8 ? (
+                <div className='maxEight'>Your result : {countSuccessAnswer} / {quizData.HTML.length}</div>
+              ) : null}
+            </div>
+
+            ) : resultArticle === 'CSS' ? (
+            <div className='wrapperQB__result'>
+              <div>Congratulations, you've completed the test.</div>
+              {countSuccessAnswer <= 4 ? (
+                <div className='minFor'>Your result : {countSuccessAnswer} / {quizData.CSS.length}</div>
+              ) : countSuccessAnswer <=8 ? (
+                <div className='avarage'>Your result : {countSuccessAnswer} / {quizData.CSS.length}</div>
+              ) : countSuccessAnswer > 8 ? (
+                <div className='maxEight'>Your result : {countSuccessAnswer} / {quizData.CSS.length}</div>
+              ) : null}
+            </div>
+
+            ) : resultArticle === 'JS' ? (
+            <div className='wrapperQB__result'>
+              <div>Congratulations, you've completed the test.</div>
+              {countSuccessAnswer <= 4 ? (
+                <div className='minFor'>Your result : {countSuccessAnswer} / {quizData.JavaScript.length}</div>
+              ) : countSuccessAnswer <=8 ? (
+                <div className='avarage'>Your result : {countSuccessAnswer} / {quizData.JavaScript.length}</div>
+              ) : countSuccessAnswer > 8 ? (
+                <div className='maxEight'>Your result : {countSuccessAnswer} / {quizData.JavaScript.length}</div>
+              ) : null}
+            </div>
+
+            ) : resultArticle === 'body' ? (
+            <div className='wrapperQB__result'>
+              <div>Congratulations, you've completed the test.</div>
+              {countSuccessAnswer <= 4 ? (
+                <div className='minFor'>Your result : {countSuccessAnswer} / {quizData.Accessibility.length}</div>
+              ) : countSuccessAnswer <=8 ? (
+                <div className='avarage'>Your result : {countSuccessAnswer} / {quizData.Accessibility.length}</div>
+              ) : countSuccessAnswer > 8 ? (
+                <div className='maxEight'>Your result : {countSuccessAnswer} / {quizData.Accessibility.length}</div>
+              ) : null}
+            </div>
+              
+            ) : null
+            
       ) : null}
+      
     </div>
   )
 }

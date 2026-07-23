@@ -11,23 +11,29 @@ const AnswerBlock = ({
   setArticle,
   count,
   currentQuestion,
+  countSuccessAnswer,
 
   setCurrentQuestion,
   setCount,
+  setCountSuccessAnswer,
+  setResultArticle
 }) => {
 
   const getArticle = (item) => {
     setArticle(item)
-    
+    setResultArticle(item)
   }
 
   const [currentAnswer, setCurrentAnswer] = useState(0);
-  const [countSuccessAnswer, setCountSuccessAnswer] = useState(0)
+  const [saveAnswer, setSaveAnswer] = useState([])
 
   const nextQuestion = (item) => {
+    setSaveAnswer(prev => [...prev, item])
     setCount(count + 1)
     setCurrentAnswer(prev => prev + 1)
     setCurrentQuestion(prev => prev + 1)
+    
+    console.log(saveAnswer)
 
     if(article === 'HTML'){
       if(item === quizData.HTML[currentAnswer].answers[quizData.HTML[currentAnswer].correctAnswer]){
@@ -186,6 +192,7 @@ const AnswerBlock = ({
           
       ) : article === 'result' ? (
           <div>result: {countSuccessAnswer}</div>
+
       ) : null}
     </div>
   )

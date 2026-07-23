@@ -5,7 +5,8 @@
   box-sizing: border-box;
   padding: 20px 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: start;
 }
 .wrapperQB__HTMLblock, .wrapperQB__CSSblock, .wrapperQB__JSblock, .wrapperQB__AccessibilityBlock {
   width: 400px;
@@ -21,6 +22,58 @@
   color: white;
   font-size: 30px;
   font-weight: bold;
+}
+.wrapperQB__result {
+  width: 100%;
+  height: 540px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  gap: 30px;
+  text-align: center;
+}
+
+.minFor,
+.avarage,
+.maxEight {
+  font-size: 30px;
+  font-weight: bold;
+  gap: 30px;
+}
+
+.minFor {
+  color: red;
+}
+
+.avarage {
+  color: yellow;
+}
+
+.maxEight {
+  color: yellowgreen;
+}
+
+.tryAgain {
+  width: 300px;
+  height: 70px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.tryAgain:hover {
+  transform: scale(1.05);
+  transition: 0.1s;
+}
+.tryAgain:active {
+  transform: scale(0.9);
+  transition: 0.1s;
 }
 
 .helloBlock {
@@ -81,6 +134,9 @@
     font-size: 30px;
     font-weight: bold;
   }
+  .wrapperQB__result {
+    height: 200px;
+  }
   .helloBlock {
     width: 95%;
   }
@@ -103,6 +159,9 @@
   .wrapperQB {
     min-height: 200px;
   }
+  .wrapperQB__result {
+    font-size: 25x;
+  }
   .helloBlock {
     min-height: 200px;
   }
@@ -111,5 +170,10 @@
   }
   .helloBlock__thirdLineTitleDark, .helloBlock__thirdLineTitleLight {
     font-size: 20px;
+  }
+  .minFor,
+  .avarage,
+  .maxEight {
+    font-size: 25px;
   }
 }/*# sourceMappingURL=QuestionBlock.css.map */
